@@ -280,6 +280,12 @@
         background: white;
         padding: 15px;
         border-radius: 10px;
+        transition: 300ms filter ease;
+      }
+
+      .syarat:hover {
+        filter: brightness(0.9);
+        line
       }
 
       .border-bottom {
@@ -364,13 +370,17 @@
       }
 
       footer {
-        font-weight: 700;
+        /* font-weight: 700; */
         font-size: 0.9rem;
         text-align: center;
         padding: 25px 0;
         background-color: var(--dark-green);
         color: white;
         border-top: 1px solid rgb(201, 201, 201);
+      }
+
+      footer > *{
+        margin-bottom: 8px;
       }
 
       .animate-up {
@@ -531,6 +541,7 @@
                 <p>Lorem ipsum dolor sit amet.</p>
                 <p>50</p>
               </div>
+              <a href="#" class="syarat">Lihat Persyaratan</a>
             </div>
           </div>
         </div>
@@ -561,7 +572,7 @@
                 <p>Lorem ipsum dolor sit amet.</p>
                 <p>50</p>
               </div>
-              <a class="syarat">Lihat Persyaratan</a>
+              <a href="#" class="syarat">Lihat Persyaratan</a>
             </div>
           </div>
         </div>
@@ -613,6 +624,7 @@
                 <p>Lorem ipsum dolor sit amet.</p>
                 <p>50</p>
               </div>
+              <a href="#" class="syarat">Lihat Persyaratan</a>
             </div>
           </div>
         </div>
@@ -650,6 +662,7 @@
                 <p>Lorem ipsum dolor sit amet.</p>
                 <p>50</p>
               </div>
+              <a href="#" class="syarat">Lihat Persyaratan</a>
             </div>
           </div>
         </div>
@@ -688,6 +701,7 @@
                 <p>Lorem ipsum dolor sit amet.</p>
                 <p>50</p>
               </div>
+              <a href="#" class="syarat">Lihat Persyaratan</a>
             </div>
           </div>
         </div>
@@ -723,10 +737,21 @@
     </div>
 
     <footer>
-      ©2022 -
-      <a href="https://lingkunganhidup.jakarta.go.id/"
-        >Dinas Lingkungan Hidup</a
-      >
+      <p>
+        ©2022 -
+        <a href="https://lingkunganhidup.jakarta.go.id/"
+          >Dinas Lingkungan Hidup</a
+        >
+      </p>
+
+      <p>
+        Jl. Mandala V No.67, RT.1/RW.2, Cililitan, Kec. Kramat jati,<br />Kota
+        Jakarta Timur,Daerah Khusus Ibukota Jakarta 13640
+      </p>
+      <p>
+        <span>Telp : (021) 8092744</span>
+        <span>Email : dinaslh@jakarta.go.id</span>
+      </p>
     </footer>
 
     <a href="#body" class="top">
