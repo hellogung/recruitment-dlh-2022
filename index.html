@@ -107,10 +107,11 @@
         font-size: 6vw;
         text-transform: uppercase;
         z-index: 3;
+        text-align: center;
       }
 
       main h2 {
-        margin-top: 5px;
+        margin-top: 10px;
         font-size: 2vw;
         z-index: 3;
       }
@@ -179,6 +180,7 @@
 
       .row {
         width: 80%;
+        height: 100%;
         margin: 0 auto;
         display: flex;
         flex-wrap: wrap;
@@ -187,6 +189,7 @@
       }
 
       .row .card {
+        display: block;
         width: 350px;
         height: 100%;
         padding: 30px;
@@ -196,11 +199,11 @@
           rgb(105, 162, 167) 100%
         );
         border-radius: 20px;
-        transition: 200ms all ease;
+        transition: 300ms all ease;
       }
 
-      a:hover > .card {
-        transform: scale(1.1);
+      .row .card:hover {
+        transform: scale(1.05);
       }
 
       .tanggal {
@@ -226,7 +229,7 @@
       .header {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: start;
         font-size: 1.8rem;
         margin-bottom: 10px;
       }
@@ -234,6 +237,8 @@
       .header h2 {
         color: white;
         text-transform: uppercase;
+        inline-size: 75%;
+        overflow-wrap: break-word;
       }
 
       .header h2.long {
@@ -265,6 +270,18 @@
         overflow-wrap: break-word;
       }
 
+      .syarat {
+        color: var(--dark-green);
+        margin-top: 15px;
+        font-weight: 700;
+        text-align: center;
+        display: block;
+        width: 100%;
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+      }
+
       .border-bottom {
         border-top: 1px solid white;
       }
@@ -284,7 +301,7 @@
         position: fixed;
         bottom: 20px;
         right: 20px;
-        font-size: 2.5rem;
+        font-size: 2.8rem;
         transition: 300ms all ease;
         opacity: 0;
         visibility: hidden;
@@ -302,6 +319,48 @@
         /* color: white; */
         fill: white;
         box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      .counter {
+        background-color: #d6e4e5;
+        display: flex;
+        justify-content: center;
+        padding: 50px 0;
+      }
+
+      .counter .card {
+        min-width: 350px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        background-color: white;
+        border-radius: 20px;
+        color: var(--dark-green);
+        box-shadow: 0 10px 15px #4971744d;
+      }
+
+      .counter .card .card-header {
+        font-weight: 800;
+        margin-bottom: 10px;
+        text-align: center;
+        font-size: 1.5rem;
+      }
+
+      .counter .card .card-body .wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid var(--dark-green);
+      }
+
+      .counter .card .card-body .wrapper:first-child {
+        border-top: none;
+      }
+
+      .counter .card .card-body .wrapper > * {
+        font-weight: 700;
+        padding: 10px 0;
       }
 
       footer {
@@ -390,6 +449,17 @@
         .row {
           width: 90%;
         }
+
+        .row .card:hover {
+          transform: none;
+        }
+        .top {
+        }
+
+        .top:hover {
+          transform: none;
+          filter: none;
+        }
       }
     </style>
   </head>
@@ -398,9 +468,7 @@
     <!-- Header -->
     <header>
       <nav>
-        <a href="/">
-          <img src="./images/dlh.png" alt="Logo DLH" width="50px" />
-        </a>
+        <img src="./images/dlh.png" alt="Logo DLH" width="50px" />
         <ul>
           <a href="https://pjlp.dinaslhdki.id/login" class="btn green">
             <li>Masuk</li>
@@ -429,7 +497,7 @@
     <section id="lowongan">
       <h1>Lowongan</h1>
       <div class="row">
-        <a href="https://localhost:6001/Identity/Account/RegisterPJLP">
+        <div class="col">
           <div class="card">
             <div class="card-title">
               <div class="header">
@@ -465,8 +533,8 @@
               </div>
             </div>
           </div>
-        </a>
-        <a href="https://localhost:6001/Identity/Account/RegisterPJLP">
+        </div>
+        <div class="col">
           <div class="card">
             <div class="card-title">
               <div class="header">
@@ -493,10 +561,11 @@
                 <p>Lorem ipsum dolor sit amet.</p>
                 <p>50</p>
               </div>
+              <a class="syarat">Lihat Persyaratan</a>
             </div>
           </div>
-        </a>
-        <a href="https://localhost:6001/Identity/Account/RegisterPJLP">
+        </div>
+        <div class="col">
           <div class="card">
             <div class="card-title">
               <div class="header">
@@ -546,12 +615,12 @@
               </div>
             </div>
           </div>
-        </a>
-        <a href="https://localhost:6001/Identity/Account/RegisterPJLP">
+        </div>
+        <div class="col">
           <div class="card">
             <div class="card-title">
               <div class="header">
-                <h2 class="">PSM</h2>
+                <h2 class="">asd</h2>
                 <div class="kuota">30</div>
               </div>
             </div>
@@ -583,8 +652,8 @@
               </div>
             </div>
           </div>
-        </a>
-        <a href="https://localhost:6001/Identity/Account/RegisterPJLP">
+        </div>
+        <div class="col">
           <div class="card">
             <div class="card-title">
               <div class="header">
@@ -604,18 +673,16 @@
                 <span class="icon-tanggal">📅</span>
               </div>
               <div class="detail-jabatan border-bottom">
-                <p>
-                  Petugas Sampah Kali Saluran Mikro agung gumelar start with
-                  finish
-                </p>
-                <p>123</p>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <p>50</p>
               </div>
               <div class="detail-jabatan border-bottom">
-                <p>
-                  Petugas Sampah Kali Saluran Mikro agung gumelar start with
-                  finish
-                </p>
-                <p>123</p>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <p>50</p>
+              </div>
+              <div class="detail-jabatan border-bottom">
+                <p>Lorem ipsum dolor sit amet.</p>
+                <p>50</p>
               </div>
               <div class="detail-jabatan border-bottom">
                 <p>Lorem ipsum dolor sit amet.</p>
@@ -623,9 +690,37 @@
               </div>
             </div>
           </div>
-        </a>
+        </div>
       </div>
     </section>
+
+    <div class="counter">
+      <div class="card">
+        <div class="card-header">Quick Count Pelamar</div>
+        <div class="card-body">
+          <div class="wrapper">
+            <p class="bidang">Bidang PSM</p>
+            <p class="total">12143</p>
+          </div>
+          <div class="wrapper">
+            <p class="bidang">Bidang UPST</p>
+            <p class="total">33551</p>
+          </div>
+          <div class="wrapper">
+            <p class="bidang">Bidang TLK</p>
+            <p class="total">112314</p>
+          </div>
+          <div class="wrapper">
+            <p class="bidang">Bidang LLHD</p>
+            <p class="total">112314</p>
+          </div>
+          <div class="wrapper">
+            <p class="bidang">Bidang XYZ</p>
+            <p class="total">112314</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <footer>
       ©2022 -
@@ -654,6 +749,11 @@
           document.querySelector(".top").style.opacity = "0";
           document.querySelector(".top").style.visibility = "hidden";
         }
+      });
+
+      const totals = document.querySelectorAll(".total");
+      totals.forEach((total) => {
+        total.innerHTML = parseInt(total.innerHTML).toLocaleString("en-US");
       });
     </script>
   </body>
