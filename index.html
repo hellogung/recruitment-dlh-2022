@@ -341,7 +341,7 @@
       .top {
         position: fixed;
         bottom: 30px;
-        right: 35px;
+        right: 20px;
         transition: 300ms all ease;
         opacity: 0;
         visibility: hidden;
@@ -359,6 +359,14 @@
         /* color: white; */
         fill: white;
         box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      .time-countdown {
+        font-size: 2em;
+      }
+
+      .countdown .timesup {
+        font-size: 2em;
       }
 
       .counter {
@@ -548,7 +556,10 @@
     <main>
       <h1 class="">Rekrutmen 2022</h1>
       <h2 class="">Dinas Lingkungan Hidup Provinsi DKI Jakarta</h2>
-      <h3 class="">📅 Pendaftaran dibuka: 08 - 12 Desember 2022</h3>
+      <!-- <h3 class="countdown">📅 Pendaftaran dibuka: 08 - 12 Desember 2022</h3> -->
+      <h3 class="countdown text-center">
+        📅 Pendaftaran dibuka: 08 - 12 Desember 2022
+      </h3>
       <a href="#lowongan" class="lowongan animate-float">Cek Sekarang</a>
       <img src="./images/gambar.png" alt="" class="illustrator" />
       <img src="./images/bg-asset.svg" alt="" class="bg-asset-1" />
@@ -980,6 +991,35 @@
       totals.forEach((total) => {
         total.innerHTML = parseInt(total.innerHTML).toLocaleString("en-US");
       });
+    </script>
+
+    <script>
+      const due = new Date("2022-12-12 23:59:59").getTime();
+      let now, distance, days, hours, minutes, seconds;
+
+      let x = setInterval(() => {
+        now = new Date().getTime();
+        distance = due - now;
+
+        days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        if (days === 0) {
+          document.querySelector(
+            ".countdown"
+          ).innerHTML = `📅 Pendaftaran akan berakhir dalam: <br> <span class='time-countdown'>${hours}h ${minutes}m ${seconds}s</span>`;
+        }
+
+        if (distance < 0) {
+          clearInterval(x);
+          document.querySelector(".countdown").innerHTML =
+            "📅 Pendaftaran Telah Berakhir";
+        }
+      }, 1000);
     </script>
   </body>
 </html>
